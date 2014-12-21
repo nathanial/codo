@@ -31,7 +31,6 @@ module.exports = class Theme.Theme
     @render 'method_list', 'method_list.html'
 
     @renderClasses()
-    @renderMixins()
     @renderFiles()
     @renderExtras()
     @renderIndex()
@@ -58,7 +57,6 @@ module.exports = class Theme.Theme
     unless entity?
       entity = kind
       kind = 'class'  if entity instanceof Codo.Entities.Class
-      kind = 'mixin'  if entity instanceof Codo.Entities.Mixin
       kind = 'file'   if entity instanceof Codo.Entities.File
       kind = 'extra'  if entity instanceof Codo.Entities.Extra
       kind = 'method' if entity.entity instanceof Codo.Meta.Method
@@ -180,9 +178,6 @@ module.exports = class Theme.Theme
         entity: klass,
         breadcrumbs: @generateBreadcrumbs(klass.name.split '.')
 
-  renderMixins: ->
-    console.log("Render Mixins Not Implemented")
-
   renderFiles: ->
     @render 'file_list', 'file_list.html',
       tree: TreeBuilder.build @environment.allFiles(), (file) ->
@@ -208,7 +203,6 @@ module.exports = class Theme.Theme
     search = []
     everything = [
       @environment.allClasses(),
-      @environment.allMixins(),
       @environment.allFiles(),
       @environment.allExtras()
     ]

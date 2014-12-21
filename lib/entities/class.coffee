@@ -129,7 +129,7 @@ module.exports = class Entities.Class extends require('../entity')
       @parent.descendants?.push(@)
 
   linkifyMixins: ->
-    console.log("Linkify Mixins Not Implemented")
+    console.log("Linkify Mixins Not Implemented", @name)
 
   effectiveMethods: ->
     return @_effectiveMethods if @_effectiveMethods?

@@ -36,23 +36,6 @@
                         %small
                           = surround '(', ')', -> klass.namespace
 
-        - if @environment.allMixins().length > 0
-          %h2 Mixins Listing A-Z
-
-          .index
-            - for char, mixins of @mixins
-              %ul
-                %li.letter= char
-                %ul
-                  - for mixin in mixins
-                    %li
-                      %a{href: @pathFor('mixin', mixin, @path)}
-                        = mixin.basename
-
-                      - if mixin.namespace
-                        %small
-                          = surround '(', ')', -> mixin.namespace
-
         - if @environment.allFiles().length > 0
           %h2 File Listing A-Z
 

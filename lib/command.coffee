@@ -125,7 +125,6 @@ module.exports = class Command
         ['Files', environment.allFiles().length, ''],
         ['Extras', environment.allExtras().length, ''],
         ['Classes', sections['Classes'].total, sections['Classes'].undocumented.length],
-        ['Mixins', sections['Mixins'].total, sections['Mixins'].undocumented.length],
         ['Methods', sections['Methods'].total, sections['Methods'].undocumented.length]
       )
 
