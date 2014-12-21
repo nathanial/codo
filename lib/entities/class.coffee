@@ -3,6 +3,7 @@ Variable   = require './variable'
 Property   = require './property'
 MetaMethod = require '../meta/method'
 Entities   = require '../_entities'
+_ = require 'underscore'
 
 module.exports = class Entities.Class extends require('../entity')
 
@@ -129,7 +130,19 @@ module.exports = class Entities.Class extends require('../entity')
       @parent.descendants?.push(@)
 
   linkifyMixins: ->
-    console.log("Linkify Mixins Not Implemented", @name)
+    if @documentation?.includes?
+      for entry in @documentation.includes
+        mixin = @environment.find(Class, entry)
+        if not mixin?
+          throw "Could not find mixin #{entry}"
+        @includes.push(mixin)
+
+    if @documentation?.extends?
+      for entry in @documentation.extends
+        mixin = @environemtn.find(Class, entry)
+        if not mixin?
+          throw "Could not find mixin #{entry}"
+        @extends.push(mixin)
 
   effectiveMethods: ->
     return @_effectiveMethods if @_effectiveMethods?
@@ -153,15 +166,14 @@ module.exports = class Entities.Class extends require('../entity')
       }
 
     resolvers =
-      includes: 'effectiveInclusionMethods'
-      extends: 'effectiveExtensionMethods'
-      concerns: 'effectiveConcernMethods'
+      includes: 'methods'
+      extends: 'methods'
 
     for storage, resolver of resolvers
       for mixin in @[storage]
-        for method in mixin[resolver]()
+        for method in mixin[resolver]
           methods.push
-            entity: method
+            entity: MetaMethod.fromMethodEntity method
             owner: mixin
 
     methods
