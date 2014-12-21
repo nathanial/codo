@@ -137,7 +137,6 @@ module.exports = class Theme.Theme
       char = String.fromCharCode(code)
       map  = [
         [@environment.allClasses(), classes],
-        [@environment.allMixins(), mixins],
         [@environment.allFiles(), files]
       ]
 
@@ -145,7 +144,7 @@ module.exports = class Theme.Theme
         for entry in list
           if entry.basename.toLowerCase()[0] == char
             storage[char] ?= []
-            storage[char].push(entry) 
+            storage[char].push(entry)
 
     @render 'alphabetical_index', 'alphabetical_index.html',
       classes: classes
@@ -157,8 +156,6 @@ module.exports = class Theme.Theme
         'class_list.html'
       else if @environment.allFiles().length > 0
         'file_list.html'
-      else if @environment.allMixins().length > 0
-        'mixin_list.html'
       else if @environment.allExtras().length > 0
         'extra_list.html'
       else
@@ -184,14 +181,7 @@ module.exports = class Theme.Theme
         breadcrumbs: @generateBreadcrumbs(klass.name.split '.')
 
   renderMixins: ->
-    @render 'mixin_list', 'mixin_list.html',
-      tree: TreeBuilder.build @environment.allMixins(), (klass) ->
-        [klass.basename, klass.namespace.split('.')]
-
-    for mixin in @environment.allMixins()
-      @render 'mixin', @pathFor('mixin', mixin),
-        entity: mixin
-        breadcrumbs: @generateBreadcrumbs(mixin.name.split '.')
+    console.log("Render Mixins Not Implemented")
 
   renderFiles: ->
     @render 'file_list', 'file_list.html',

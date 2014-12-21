@@ -7,7 +7,6 @@ Class     = require './entities/class'
 Method    = require './entities/method'
 Variable  = require './entities/variable'
 Property  = require './entities/property'
-Mixin     = require './entities/mixin'
 Extra     = require './entities/extra'
 walkdir   = require 'walkdir'
 Winston   = require 'winston'
@@ -45,7 +44,6 @@ module.exports = class Environment
     @needles.push Method
     @needles.push Variable
     @needles.push Property
-    @needles.push Mixin
 
   readCoffee: (file) ->
     return if @parsed[file]
@@ -81,14 +79,13 @@ module.exports = class Environment
 
   allFiles:   -> @_allFiles   ||= @all(File)
   allClasses: -> @_allClasses ||= @all(Class)
-  allMixins:  -> @_allMixins  ||= @all(Mixin)
   allExtras:  -> @_allExtras  ||= @all(Extra)
   allMethods: ->
     return @_allMethods if @_allMethods?
 
     @_allMethods = []
 
-    for source in [@allFiles(), @allClasses(), @allMixins()]
+    for source in [@allFiles(), @allClasses()]
       for entry in source
         for method in entry.effectiveMethods()
           @_allMethods.push {entity: method, owner: entry}
@@ -103,7 +100,7 @@ module.exports = class Environment
 
     @_allVariables = []
 
-    for source in [@allFiles(), @allClasses(), @allMixins()]
+    for source in [@allFiles(), @allClasses()]
       for entry in source
         for variable in entry.variables
           @_allVariables.push {entity: variable, owner: entry}
@@ -122,7 +119,7 @@ module.exports = class Environment
   linkify: ->
     entity.linkify() for entity in @entities
 
-    for basics in [@allFiles(), @allClasses(), @allMixins()]
+    for basics in [@allFiles(), @allClasses()]
       for basic in basics
         @references[basic.name] = basic
 

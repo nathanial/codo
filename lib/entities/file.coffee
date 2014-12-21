@@ -1,7 +1,6 @@
 Path       = require 'path'
 Method     = require './method'
 Variable   = require './variable'
-Mixin      = require './mixin'
 Class      = require './class'
 MetaMethod = require '../meta/method'
 Entities   = require '../_entities'
@@ -35,8 +34,6 @@ module.exports = class Entities.File extends require('../entity')
             @methods.push(entity) if entity.name.length > 0
           if entity instanceof Variable
             @variables.push entity
-          if entity instanceof Mixin
-            @mixins.push entity
           if entity instanceof Class
             @classes.push entity
 

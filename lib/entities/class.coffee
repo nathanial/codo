@@ -1,7 +1,6 @@
 Method     = require './method'
 Variable   = require './variable'
 Property   = require './property'
-Mixin      = require './mixin'
 MetaMethod = require '../meta/method'
 Entities   = require '../_entities'
 
@@ -47,7 +46,7 @@ module.exports = class Entities.Class extends require('../entity')
   fetchName: (source, selfish, container) ->
     name = []
 
-    # Nested class definition inherits 
+    # Nested class definition inherits
     # the namespace from the containing class
     name.push container.name if container
 
@@ -82,14 +81,14 @@ module.exports = class Entities.Class extends require('../entity')
   linkifyAssign: (node) ->
     for entity in node.entities when entity.selfish
       # class Foo
-      #   @foo = ->            
+      #   @foo = ->
       if entity instanceof Method
         entity.kind = 'static'
         @methods.push entity
 
       # class Foo
       #   @foo = 'test'
-      if entity instanceof Variable 
+      if entity instanceof Variable
         entity.kind = 'static'
         @variables.push entity
 
@@ -105,7 +104,7 @@ module.exports = class Entities.Class extends require('../entity')
 
         # class Foo
         #   foo: 'test'
-        if entity instanceof Variable 
+        if entity instanceof Variable
           entity.kind = if entity.selfish then 'static' else 'dynamic'
           @variables.push entity
 
@@ -130,23 +129,7 @@ module.exports = class Entities.Class extends require('../entity')
       @parent.descendants?.push(@)
 
   linkifyMixins: ->
-    if @documentation?.includes?
-      for entry in @documentation.includes
-        mixin = @environment.find(Mixin, entry) || entry
-        @includes.push(mixin)
-        mixin.inclusions?.push(@)
-
-    if @documentation?.extends?
-      for entry in @documentation.extends
-        mixin = @environment.find(Mixin, entry) || entry
-        @extends.push(mixin)
-        mixin.extensions?.push(@)
-
-    if @documentation?.concerns?
-      for entry in @documentation.concerns
-        mixin = @environment.find(Mixin, entry) || entry
-        @concerns.push(mixin)
-        mixin.concerns?.push(@)
+    console.log("Linkify Mixins Not Implemented")
 
   effectiveMethods: ->
     return @_effectiveMethods if @_effectiveMethods?

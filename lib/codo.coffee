@@ -17,7 +17,6 @@ module.exports = Codo =
     Method:    require './entities/method'
     Variable:  require './entities/variable'
     Property:  require './entities/property'
-    Mixin:     require './entities/mixin'
     Extra:     require './entities/extra'
 
   Meta:

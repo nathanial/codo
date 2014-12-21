@@ -89,12 +89,6 @@ module.exports = class Command
         total: environment.allClasses().length
         undocumented: environment.allClasses().filter((e) -> !e.documentation?).map (x) ->
           [x.name, x.file.path]
-
-      Mixins:
-        total: environment.allMixins().length
-        undocumented: environment.allMixins().filter((e) -> !e.documentation?).map (x) ->
-          [x.name, x.file.path]
-
       Methods:
         total: environment.allMethods().length
         undocumented: environment.allMethods().filter((e) -> !e.entity.documentation?).map (x) ->
