@@ -130,9 +130,7 @@ module.exports = class Entities.Class extends require('../entity')
   linkifyMixins: ->
     if @documentation?.includes?
       for entry in @documentation.includes
-        mixin = @environment.find(Class, entry)
-        if not mixin?
-          throw "Could not find mixin #{entry}"
+        mixin = @environment.find(Class, entry) || entry
         @includes.push(mixin)
 
   effectiveMethods: ->
