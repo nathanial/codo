@@ -212,8 +212,7 @@ module.exports = class Documentation
       todos: @todos
 
       includes: @includes
-      extends: @extends
-      
+
       examples: @examples
 
       params: @params

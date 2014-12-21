@@ -39,10 +39,10 @@
             "parameters": []
           }
         ],
-        "variables": []
+        "variables": [],
+        "properties" : []
       }
-    ],
-    "extends": []
+    ]
   },
   {
     "file": "spec/_templates/environment/mixin.coffee",
@@ -61,12 +61,14 @@
         "file": "spec/_templates/environment/mixin.coffee",
         "name": "look",
         "bound": false,
+        "kind" : "dynamic",
         "parameters": []
       },
       {
         "file": "spec/_templates/environment/mixin.coffee",
         "name": "feel",
         "bound": false,
+        "kind" : "dynamic",
         "parameters": []
       }
     ],

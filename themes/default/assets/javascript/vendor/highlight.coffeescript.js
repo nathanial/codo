@@ -94,7 +94,7 @@ hljs.LANGUAGES.coffeescript = function() {
     defaultMode: {
       keywords: keywords,
       contains: [
-        // Numbers 
+        // Numbers
         hljs.C_NUMBER_MODE,
         hljs.BINARY_NUMBER_MODE,
         // Strings

@@ -31,8 +31,7 @@
       }
     ],
     "properties": [],
-    "includes": [],
-    "extends": []
+    "includes": []
   },
   {
     "file": "spec/_templates/variables/constant_variables.coffee",

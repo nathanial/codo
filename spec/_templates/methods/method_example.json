@@ -28,8 +28,7 @@
     ],
     "variables": [],
     "properties": [],
-    "includes": [],
-    "extends": []
+    "includes": []
   },
   {
     "file": "spec/_templates/methods/method_example.coffee",

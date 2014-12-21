@@ -32,16 +32,6 @@
               - else
                 = @entity.parent
 
-        - if @entity.extends.length > 0
-          %tr
-            %td Extends:
-            %td
-              - for extension, i in @entity.extends
-                - if extension.name?
-                  %a{href: @pathFor('mixin', extension, @path)}= extension.name
-                - else
-                  = extension
-
         - if @entity.includes.length > 0
           %tr
             %td Includes:
@@ -129,23 +119,6 @@
           %p.inherited
             - for method in @entity.inheritedMethods()
               %a{href: @pathFor(method, undefined, @path)}= method.entity.shortSignature()
-
-      - if @entity.extends.length > 0
-        %h2
-          %small Extended Method Summary
-
-        - for mixin in @entity.extends
-          - if mixin.effectiveExtensionMethods?
-            %h3.inherited
-              Methods extended from
-              %a{href: @pathFor('mixin', mixin, @path)}= mixin.name
-            %p.inherited
-              - for method in mixin.effectiveExtensionMethods()
-                %a{href: "#{@pathFor 'mixin', mixin, @path}##{@anchorFor(method)}"}= method.shortSignature()
-          - else
-            %h3.inherited
-              Methods extended from
-              = mixin
 
       - if @entity.includes.length > 0
         %h2

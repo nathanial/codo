@@ -145,8 +145,7 @@
         }
       }
     ],
-    "includes": [],
-    "extends": []
+    "includes": []
   },
   {
     "file": "spec/_templates/properties/properties.coffee",

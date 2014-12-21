@@ -21,7 +21,6 @@ module.exports = class Entities.Class extends require('../entity')
     @variables   = []
     @properties  = []
     @includes    = []
-    @extends     = []
     @descendants = []
 
     name = @name.split('.')
@@ -136,13 +135,6 @@ module.exports = class Entities.Class extends require('../entity')
           throw "Could not find mixin #{entry}"
         @includes.push(mixin)
 
-    if @documentation?.extends?
-      for entry in @documentation.extends
-        mixin = @environemtn.find(Class, entry)
-        if not mixin?
-          throw "Could not find mixin #{entry}"
-        @extends.push(mixin)
-
   effectiveMethods: ->
     return @_effectiveMethods if @_effectiveMethods?
 
@@ -166,7 +158,6 @@ module.exports = class Entities.Class extends require('../entity')
 
     resolvers =
       includes: 'methods'
-      extends: 'methods'
 
     for storage, resolver of resolvers
       for mixin in @[storage]
@@ -222,5 +213,4 @@ module.exports = class Entities.Class extends require('../entity')
       variables:     @variables.map (x) -> x.inspect()
       properties:    @properties.map (x) -> x.inspect()
       includes:      @includes.map (x) -> x.inspect?() || x
-      extends:       @extends.map (x) -> x.inspect?() || x
     }

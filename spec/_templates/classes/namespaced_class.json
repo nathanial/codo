@@ -14,8 +14,7 @@
     "methods": [],
     "variables": [],
     "properties": [],
-    "includes": [],
-    "extends": []
+    "includes": []
   },
   {
     "file": "spec/_templates/classes/namespaced_class.coffee",
@@ -28,7 +27,6 @@
     "methods": [],
     "variables": [],
     "properties": [],
-    "includes": [],
-    "extends": []
+    "includes": []
   }
 ]
