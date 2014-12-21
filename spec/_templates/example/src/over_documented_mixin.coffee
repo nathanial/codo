@@ -20,6 +20,5 @@
 # @since 1.0
 # @todo Run with the wolves {http://www.github.com}
 # @version 1.1
-OverDocumentedMixin =
-
+class OverDocumentedMixin
   mixed_method: ->
