@@ -16,28 +16,34 @@
         "file": "spec/_templates/mixins/include_mixin.coffee",
         "name": "hello",
         "bound": false,
-        "parameters": []
+        "parameters": [],
+        "kind" : "dynamic"
       },
       {
         "file": "spec/_templates/mixins/include_mixin.coffee",
         "name": "goodbye",
         "bound": false,
-        "parameters": []
+        "parameters": [],
+        "kind" : "dynamic"
       }
     ],
-    "variables": []
+    "variables": [],
+    "includes": [],
+    "properties": []
   },
   {
     "file": "spec/_templates/mixins/include_mixin.coffee",
     "name": "hello",
     "bound": false,
-    "parameters": []
+    "parameters": [],
+    "kind" : "dynamic"
   },
   {
     "file": "spec/_templates/mixins/include_mixin.coffee",
     "name": "goodbye",
     "bound": false,
-    "parameters": []
+    "parameters": [],
+    "kind" : "dynamic"
   },
   {
     "file": "spec/_templates/mixins/include_mixin.coffee",
@@ -65,16 +71,20 @@
             "file": "spec/_templates/mixins/include_mixin.coffee",
             "name": "hello",
             "bound": false,
-            "parameters": []
+            "parameters": [],
+            "kind" : "dynamic"
           },
           {
             "file": "spec/_templates/mixins/include_mixin.coffee",
             "name": "goodbye",
             "bound": false,
-            "parameters": []
+            "parameters": [],
+            "kind" : "dynamic"
           }
         ],
-        "variables": []
+        "variables": [],
+        "includes": [],
+        "properties":[]
       }
     ]
   }

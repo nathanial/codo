@@ -22,4 +22,5 @@
 #
 # @mixin
 #
-Foo.Bar = {}
+class Foo.Bar
+  
