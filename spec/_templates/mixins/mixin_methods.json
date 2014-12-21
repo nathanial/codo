@@ -7,6 +7,7 @@
   {
     "file": "spec/_templates/mixins/mixin_methods.coffee",
     "name": "Foo",
+    "includes" : [],
     "documentation": {
       "comment": "",
       "summary": "",
@@ -53,12 +54,14 @@
         "file": "spec/_templates/mixins/mixin_methods.coffee",
         "name": "helper",
         "bound": false,
+        "kind" : "dynamic",
         "parameters": []
       },
       {
         "file": "spec/_templates/mixins/mixin_methods.coffee",
         "name": "another",
         "bound": false,
+        "kind" : "dynamic",
         "parameters": [
           {
             "name": "a",
@@ -74,6 +77,7 @@
         "file": "spec/_templates/mixins/mixin_methods.coffee",
         "name": "withDefault",
         "bound": false,
+        "kind" : "dynamic",
         "parameters": [
           {
             "name": "a",
@@ -109,6 +113,7 @@
         "file": "spec/_templates/mixins/mixin_methods.coffee",
         "name": "nowWithSpalt",
         "bound": false,
+        "kind" : "dynamic",
         "parameters": [
           {
             "name": "foo",
@@ -121,18 +126,21 @@
         ]
       }
     ],
-    "variables": []
+    "variables": [],
+    "properties": []
   },
   {
     "file": "spec/_templates/mixins/mixin_methods.coffee",
     "name": "helper",
     "bound": false,
+    "kind" : "dynamic",
     "parameters": []
   },
   {
     "file": "spec/_templates/mixins/mixin_methods.coffee",
     "name": "another",
     "bound": false,
+    "kind" : "dynamic",
     "parameters": [
       {
         "name": "a",
@@ -148,6 +156,7 @@
     "file": "spec/_templates/mixins/mixin_methods.coffee",
     "name": "withDefault",
     "bound": false,
+    "kind" : "dynamic",
     "parameters": [
       {
         "name": "a",
@@ -189,6 +198,7 @@
     "file": "spec/_templates/mixins/mixin_methods.coffee",
     "name": "nowWithSpalt",
     "bound": false,
+    "kind" : "dynamic",
     "parameters": [
       {
         "name": "foo",

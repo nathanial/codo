@@ -12,7 +12,7 @@ beforeEach ->
 
       environment.linkify()
 
-      actual   = environment.inspect()
+      actual   = JSON.parse(JSON.stringify(environment.inspect()))
       expected = JSON.parse(FS.readFileSync(expected, 'utf8'))
 
       @message = ->
@@ -24,7 +24,7 @@ beforeEach ->
         report += JSON.stringify(actual, undefined, 4)
         report += "\n-------------------------------------------------------\n"
 
-      _.isEqual(JSON.stringify(actual), JSON.stringify(expected))
+      _.isEqual(actual, expected)
 
 describe 'Environment', ->
 
