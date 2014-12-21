@@ -3,7 +3,7 @@
 TROLOLO = 'test'
 
 # @mixin
-Example.AngryAnimal =
+class Example.AngryAnimal
   roar: ->
 
 # Ola-la once more

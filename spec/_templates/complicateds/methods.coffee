@@ -9,16 +9,8 @@ class Class
   z: ->
 
 # @mixin
-Mixin =
+class Mixin
   m: ->
-
-# @mixin
-Concern =
-  ClassMethods:
-    cs: ->
-
-  InstanceMethods:
-    cd: ->
 
 class Subclass extends Class
   x: ->
