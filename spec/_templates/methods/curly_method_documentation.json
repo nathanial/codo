@@ -233,8 +233,7 @@
     "variables": [],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/methods/curly_method_documentation.coffee",

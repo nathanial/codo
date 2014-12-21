@@ -40,8 +40,7 @@
     ],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/variables/instance_variables.coffee",

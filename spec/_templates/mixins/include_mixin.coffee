@@ -1,5 +1,5 @@
 # @mixin
-Name.Space.MyMixin =
+class Name.Space.MyMixin
   hello: ->
   goodbye: ->
 

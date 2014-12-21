@@ -30,7 +30,6 @@
     "variables": [],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   }
 ]

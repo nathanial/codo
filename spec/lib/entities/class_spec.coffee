@@ -1,5 +1,4 @@
 Environment = require '../../../lib/environment'
-Method = require '../../../lib/entities/mixin'
 
 describe 'Class', ->
 

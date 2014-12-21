@@ -8,8 +8,7 @@
 #   @option value [Object] whatever
 #
 # @mixin
-Foo =
-
+class Foo
   helper: ->
 
   another: (a, b) ->

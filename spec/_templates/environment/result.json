@@ -42,8 +42,7 @@
         "variables": []
       }
     ],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/environment/mixin.coffee",

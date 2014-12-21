@@ -239,8 +239,7 @@
     "variables": [],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/methods/method_documentation.coffee",

@@ -44,8 +44,7 @@
     ],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/variables/class_variables.coffee",

@@ -2,7 +2,7 @@ module.exports = class Documentation
 
   constructor: (comment) ->
     @parseTags(comment)
-  
+
   # Parse the given lines and adds the result
   # to the result object.
   #
@@ -131,17 +131,9 @@ module.exports = class Documentation
       else if mixin = /^@mixin/i.exec line
         @mixin = true
 
-      else if concern = /^@concern\s+(.+)/i.exec line
-        @concerns ?= []
-        @concerns.push concern[1]
-
       else if include = /^@include\s+(.+)/i.exec line
         @includes ?= []
         @includes.push include[1]
-
-      else if extend = /^@extend\s+(.+)/i.exec line
-        @extends ?= []
-        @extends.push extend[1]
 
       else if event = /^@event\s+(\S+)(\s+(.+))?/i.exec line
         @events ?= []
@@ -221,10 +213,9 @@ module.exports = class Documentation
 
       includes: @includes
       extends: @extends
-      concerns: @concerns
       
       examples: @examples
-      
+
       params: @params
       options: @options
       returns: @returns

@@ -24,8 +24,7 @@
     "variables": [],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/methods/assigned_parameters.coffee",

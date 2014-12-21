@@ -22,7 +22,6 @@ module.exports = class Entities.Class extends require('../entity')
     @properties  = []
     @includes    = []
     @extends     = []
-    @concerns    = []
     @descendants = []
 
     name = @name.split('.')
@@ -224,5 +223,4 @@ module.exports = class Entities.Class extends require('../entity')
       properties:    @properties.map (x) -> x.inspect()
       includes:      @includes.map (x) -> x.inspect?() || x
       extends:       @extends.map (x) -> x.inspect?() || x
-      concerns:      @concerns.map (x) -> x.inspect?() || x
     }

@@ -40,14 +40,6 @@
               - for klass in @entity.inclusions
                 %a{href: @pathFor('class', klass, @path)}= klass.name
 
-        - if @entity.concerns.length > 0
-          %tr
-            %td Concerned in:
-            %td
-              - for klass in @entity.concerns
-                %a{href: @pathFor('class', klass, @path)}= klass.name
-
-
       - if @entity.documentation?
         %h2 Overview
 

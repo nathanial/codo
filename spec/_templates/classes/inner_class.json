@@ -12,8 +12,7 @@
     "variables": [],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/classes/inner_class.coffee",
@@ -27,15 +26,13 @@
       "variables": [],
       "properties": [],
       "includes": [],
-      "extends": [],
-      "concerns": []
+      "extends": []
     },
     "methods": [],
     "variables": [],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   },
   {
     "file": "spec/_templates/classes/inner_class.coffee",
@@ -49,8 +46,7 @@
       "variables": [],
       "properties": [],
       "includes": [],
-      "extends": [],
-      "concerns": []
+      "extends": []
     },
     "parent": {
       "file": "spec/_templates/classes/inner_class.coffee",
@@ -64,21 +60,18 @@
         "variables": [],
         "properties": [],
         "includes": [],
-        "extends": [],
-        "concerns": []
+        "extends": []
       },
       "methods": [],
       "variables": [],
       "properties": [],
       "includes": [],
-      "extends": [],
-      "concerns": []
+      "extends": []
     },
     "methods": [],
     "variables": [],
     "properties": [],
     "includes": [],
-    "extends": [],
-    "concerns": []
+    "extends": []
   }
 ]
