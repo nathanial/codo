@@ -93,8 +93,8 @@ describe 'Environment', ->
 
       actual = JSON.stringify(environment.inspect(), null, 2)
       expect(FS.readFileSync('spec/_templates/environment/result.json', 'utf8')).toEqual actual
-      expect(Object.keys environment.references).toEqual [ 
+      expect(Object.keys environment.references).toEqual [
         'spec/_templates/environment/class.coffee',
         'spec/_templates/environment/mixin.coffee',
-        'Fluffy', 'LookAndFeel', 'LookAndFeel~feel', 'LookAndFeel~look'
+        'Fluffy', 'LookAndFeel', 'LookAndFeel#feel', 'LookAndFeel#look'
       ]

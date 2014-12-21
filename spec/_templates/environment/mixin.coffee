@@ -1,6 +1,6 @@
 #
 # @mixin
 #
-LookAndFeel =
+class LookAndFeel
   look: ->
   feel: ->
