@@ -1,6 +1,7 @@
 FS          = require 'fs'
 walkdir     = require 'walkdir'
 Environment = require '../../lib/environment'
+jsondiffpatch = (require 'jsondiffpatch').create()
 _ = require 'underscore'
 
 beforeEach ->
@@ -11,19 +12,19 @@ beforeEach ->
 
       environment.linkify()
 
-      actual   = JSON.stringify(environment.inspect(), null, 2)
-      expected = FS.readFileSync(expected, 'utf8')
+      actual   = environment.inspect()
+      expected = JSON.parse(FS.readFileSync(expected, 'utf8'))
 
       @message = ->
         report = "\n-------------------- CoffeeScript ----------------------\n"
         report += parser.content
-        report += "\n------------------- Expected JSON ---------------------\n"
-        report += expected
+        report = "\n------------------- Expected JSON ---------------------\n"
+        report += JSON.stringify(expected, undefined, 4)
         report += "\n-------------------- Parsed JSON ------------------------\n"
-        report += actual
+        report += JSON.stringify(actual, undefined, 4)
         report += "\n-------------------------------------------------------\n"
 
-      expected == actual
+      _.isEqual(JSON.stringify(actual), JSON.stringify(expected))
 
 describe 'Environment', ->
 
