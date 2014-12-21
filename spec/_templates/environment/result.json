@@ -30,17 +30,20 @@
             "file": "spec/_templates/environment/mixin.coffee",
             "name": "look",
             "bound": false,
-            "parameters": []
+            "parameters": [],
+            "kind":"dynamic"
           },
           {
             "file": "spec/_templates/environment/mixin.coffee",
             "name": "feel",
             "bound": false,
-            "parameters": []
+            "parameters": [],
+            "kind":"dynamic"
           }
         ],
         "variables": [],
-        "properties" : []
+        "properties" : [],
+        "includes": []
       }
     ]
   },
@@ -52,6 +55,8 @@
   {
     "file": "spec/_templates/environment/mixin.coffee",
     "name": "LookAndFeel",
+    "includes" : [],
+    "properties" : [],
     "documentation": {
       "comment": "",
       "summary": ""
@@ -61,14 +66,14 @@
         "file": "spec/_templates/environment/mixin.coffee",
         "name": "look",
         "bound": false,
-        "kind" : "dynamic",
+        "kind":"dynamic",
         "parameters": []
       },
       {
         "file": "spec/_templates/environment/mixin.coffee",
         "name": "feel",
         "bound": false,
-        "kind" : "dynamic",
+        "kind":"dynamic",
         "parameters": []
       }
     ],
@@ -78,12 +83,14 @@
     "file": "spec/_templates/environment/mixin.coffee",
     "name": "look",
     "bound": false,
-    "parameters": []
+    "parameters": [],
+    "kind":"dynamic"
   },
   {
     "file": "spec/_templates/environment/mixin.coffee",
     "name": "feel",
     "bound": false,
-    "parameters": []
+    "parameters": [],
+    "kind":"dynamic"
   }
 ]

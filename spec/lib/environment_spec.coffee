@@ -1,6 +1,7 @@
 FS          = require 'fs'
 walkdir     = require 'walkdir'
 Environment = require '../../lib/environment'
+_ = require 'underscore'
 
 beforeEach ->
   @addMatchers
@@ -91,8 +92,12 @@ describe 'Environment', ->
         'spec/_templates/environment/mixin.coffee'
       ]
 
-      actual = JSON.stringify(environment.inspect(), null, 2)
-      expect(FS.readFileSync('spec/_templates/environment/result.json', 'utf8')).toEqual actual
+      actual = environment.inspect()
+
+      resultJSON = JSON.parse(FS.readFileSync('spec/_templates/environment/result.json', 'utf8'))
+
+      expect(_.isEqual(actual, resultJSON))
+
       expect(Object.keys environment.references).toEqual [
         'spec/_templates/environment/class.coffee',
         'spec/_templates/environment/mixin.coffee',
