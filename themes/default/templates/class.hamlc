@@ -125,17 +125,12 @@
           %small Included Method Summary
 
         - for mixin in @entity.includes
-          - if mixin.effectiveInclusionMethods?
-            %h3.inherited
-              Methods included from
-              %a{href: @pathFor('mixin', mixin, @path)}= mixin.name
-            %p.inherited
-              - for method in mixin.effectiveInclusionMethods()
-                %a{href: "#{@pathFor 'mixin', mixin, @path}##{@anchorFor(method)}"}= method.shortSignature()
-          - else
-            %h3.inherited
-              Methods included from
-              = mixin
+          %h3.inherited
+            Methods included from
+            %a{href: @pathFor('mixin', mixin, @path)}= mixin.name
+          %p.inherited
+            - for method in mixin.effectiveMethods()
+              %a{href: "#{@pathFor 'mixin', mixin, @path}##{@anchorFor(method)}"}= method.shortSignature()
 
       - if staticMethods.length > 0
         %h2 Class Method Details
